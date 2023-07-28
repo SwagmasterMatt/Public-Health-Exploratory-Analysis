@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[10]:
+# In[2]:
 
 
 import requests
@@ -98,8 +98,230 @@ print(hospitals_geoapify_df.head())
 hospitals_geoapify_df.to_csv("Clean_Resources/hospitals_geoapify.csv", index=False)
 
 
+# In[20]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "vital-statistics-and-health-linc",
+    "q": "",
+    "rows": 9000,
+    "facet": ["area_name", "area_type", "year", "variable"],
+    "refine.area_type": "County",
+    "refine.year": "2020",
+    "offset+limit": "9000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
+# In[26]:
+
+
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/vital_stats_linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+vital_stats = pd.read_json("Resources/vital_stats_linc.json")
+print(vital_stats.head())
+print(len(vital_stats))
+
+
+# In[28]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "education",
+    "q": "",
+    "rows": 9000,
+    "facet": ["area_name", "area_type", "year", "variable"],
+    "refine.area_type": "County",
+    "refine.year": "2020",
+    "offset+limit": "9000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
+# In[29]:
+
+
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/education_stats_linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+ed_stats = pd.read_json("Resources/education_stats_linc.json")
+print(ed_stats.head())
+print(len(ed_stats))
+
+
+# In[30]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "employment-and-income-linc",
+    "q": "",
+    "rows": 9000,
+    "facet": ["area_name", "area_type", "year", "variable"],
+    "refine.area_type": "County",
+    "refine.year": "2020",
+    "offset+limit": "9000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
+# In[31]:
+
+
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/employment_income_stats_linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+employment_stats = pd.read_json("Resources/employment_income_stats_linc.json")
+print(employment_stats.head())
+print(len(employment_stats))
+
+
+# In[32]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "pop_migration",
+    "q": "",
+    "rows": 9000,
+    "facet": ["area_name", "area_type", "variable", "year", "data_type"],
+    "refine.area_type": "County",
+    "refine.data_type": "Count",
+    "refine.year": "2020",
+    "offset+limit": "9000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
 # In[33]:
 
 
-get_ipython().system('jupyter nbconvert --to script api_call.ipynb --output ./py_scripts/Hospitals_df.py')
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/pop_migration_linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+pop_migration = pd.read_json("Resources/pop_migration_linc.json")
+print(pop_migration.head())
+print(len(pop_migration))
+
+
+# In[37]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "population-by-age-race-sex-linc",
+    "q": "",
+    "rows": 10000,
+    "facet": ["area_name", "area_type", "variable", "year", "sex", "race", "data_type"],
+    "refine.area_type": "County",
+    "refine.year": "2020",
+    "offset+limit": "10000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
+# In[38]:
+
+
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/population-by-age-race-sex-linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+pop_ars = pd.read_json("Resources/population-by-age-race-sex-linc.json")
+print(pop_ars.head())
+print(len(pop_ars))
+
+
+# In[39]:
+
+
+from config import NC_osbm_key
+base_url = "https://linc.osbm.nc.gov/api/records/1.0/search/?"
+headers = {
+    "Authorization": f"Apikey {NC_osbm_key}"
+}
+params = {
+    "dataset": "social-and-human-services-linc",
+    "q": "",
+    "rows": 9000,
+    "facet": ["area_name", "type", "year", "variable"],
+    "refine.year": "2020",
+    "offset+limit": "9000"
+}
+
+response = requests.get(base_url, params=params, headers=headers).json()
+response
+print(json.dumps(response, indent=4, sort_keys=True))
+
+
+# In[40]:
+
+
+#put into .json file with proper formatting
+data_list = [record['fields'] for record in response['records']]
+with open('Resources/social-and-human-services-linc.json', 'w') as json_file:
+    json.dump(data_list, json_file)
+
+#read json file
+social_stats = pd.read_json("Resources/social-and-human-services-linc.json")
+print(social_stats.head())
+print(len(social_stats))
+
+
+# In[34]:
+
+
+get_ipython().system('jupyter nbconvert --to script api_call.ipynb --output ./py_scripts/Hospitals_df')
 

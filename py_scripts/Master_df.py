@@ -5,7 +5,7 @@
 # 
 # The goal of this file is to create a Dataframe which contains metrics for each county in North Carolina.
 
-# In[55]:
+# In[27]:
 
 
 # Dependencies
@@ -16,13 +16,13 @@ import json
 from pathlib import Path
 
 
-# In[56]:
+# In[28]:
 
 
 #read in csvs and jsons into dataframes and print head
 
 #vital-statistics-and-health-linc.json
-all_health_osbm_df = pd.read_json("Resources/vital-statistics-and-health-linc.json")
+all_health_osbm_df = pd.read_json("Resources/vital_stats_linc.json")
 #filter for 2020
 all_health_osbm_df = all_health_osbm_df[all_health_osbm_df["year"] == 2020]
 #filter for area_type = "County"
@@ -43,11 +43,11 @@ print(all_health_osbm_df.columns)
 all_health_osbm_df.to_csv("Clean_Resources/all_health_osbm_2020.csv", index=False)
 
 
-# In[57]:
+# In[29]:
 
 
 #employment-and-income-linc.json
-all_employment_osbm_df = pd.read_json("Resources/employment-and-income-linc.json")
+all_employment_osbm_df = pd.read_json("Resources/employment_income_stats_linc.json")
 print(all_employment_osbm_df.columns)
 #filter for 2020
 all_employment_osbm_df = all_employment_osbm_df[all_employment_osbm_df["year"] == 2020]
@@ -68,7 +68,7 @@ print(all_employment_osbm_df.columns)
 all_employment_osbm_df.to_csv("Clean_Resources/all_employment_osbm_2020.csv", index=False)
 
 
-# In[58]:
+# In[30]:
 
 
 #population-by-age-race-sex-linc.json
@@ -93,8 +93,6 @@ for i, row in all_population_demog_df.iterrows():
     all_population_demog_df.loc[i, col_name] = row['value']
 
 
-#drop columns and aggregate by area_name and year
-all_population_demog_df.drop(all_population_demog_df.columns[3:9], axis=1, inplace=True)
 column_order = [
     'area_name',
     'year',
@@ -226,7 +224,7 @@ all_population_demog_df.to_csv("Clean_Resources/all_population_demog_2020.csv", 
 
 
 
-# In[59]:
+# In[31]:
 
 
 #pop_migration_linc.json
@@ -252,7 +250,7 @@ print(all_population_counts_df.columns)
 all_population_counts_df.to_csv("Clean_Resources/all_population_counts_2020.csv", index=False)
 
 
-# In[60]:
+# In[32]:
 
 
 #NIH_high_school_ed.csv
@@ -279,7 +277,7 @@ print(all_high_school_ed_df["area_name"])
 all_high_school_ed_df.to_csv("Clean_Resources/all_high_school_ed_2020.csv", index=False)
 
 
-# In[61]:
+# In[33]:
 
 
 #NIH_median_income.csv
@@ -305,7 +303,7 @@ print(all_median_income_df["area_name"])
 all_median_income_df.to_csv("Clean_Resources/all_median_income_2020.csv", index=False)
 
 
-# In[62]:
+# In[34]:
 
 
 #NIH_persons_below_poverty.csv
@@ -330,7 +328,7 @@ print(all_persons_below_poverty_df["area_name"])
 all_persons_below_poverty_df.to_csv("Clean_Resources/all_persons_below_poverty_2020.csv", index=False)
 
 
-# In[63]:
+# In[35]:
 
 
 #NIH_persons_unemployed.csv
@@ -355,7 +353,7 @@ print(all_persons_unemployed_df["area_name"])
 all_persons_unemployed_df.to_csv("Clean_Resources/all_persons_unemployed_2020.csv", index=False)
 
 
-# In[66]:
+# In[36]:
 
 
 #geoapify_counties json file
@@ -388,7 +386,56 @@ counties_geoapify_df.to_csv('Clean_Resources/geoapify_counties.csv', index=False
 
 
 
-# In[67]:
+# In[37]:
+
+
+#education_stats_linc.json
+all_education_osbm_df = pd.read_json("Resources/education_stats_linc.json")
+#filter for 2020
+all_education_osbm_df = all_education_osbm_df[all_education_osbm_df["year"] == 2020]
+#filter for area_type = "County"
+all_education_osbm_df = all_education_osbm_df[all_education_osbm_df["area_type"] == "County"]
+print(all_education_osbm_df.columns)
+#clean up area_name values with errors
+all_education_osbm_df["area_name"] = all_education_osbm_df["area_name"].str.replace("Mcdowell County", "McDowell County")
+all_education_osbm_df["area_name"] = all_education_osbm_df["area_name"].str.replace("Davie  County", "Davie County")
+all_education_osbm_df["area_name"] = all_education_osbm_df["area_name"].str.replace("Samson County", "Sampson County")
+
+all_education_osbm_df = all_education_osbm_df.pivot_table(index=["area_name","year"], columns=["variable"], values="value")
+#put back into a dataframe
+all_education_osbm_df = pd.DataFrame(all_education_osbm_df.to_records())
+#replace all NaN with 0
+all_education_osbm_df = all_education_osbm_df.fillna(0)
+print(all_education_osbm_df.columns)
+#put into a csv
+all_education_osbm_df.to_csv("Clean_Resources/all_education_osbm_2020.csv", index=False)
+
+
+# In[38]:
+
+
+#education_stats_linc.json
+all_social_and_human_linc_df = pd.read_json("Resources/social-and-human-services-linc.json")
+#filter for 2020
+all_social_and_human_linc_df = all_social_and_human_linc_df[all_social_and_human_linc_df["year"] == 2020]
+#filter for area_type = "County"
+print(all_social_and_human_linc_df.columns)
+#clean up area_name values with errors
+all_social_and_human_linc_df["area_name"] = all_social_and_human_linc_df["area_name"].str.replace("Mcdowell County", "McDowell County")
+all_social_and_human_linc_df["area_name"] = all_social_and_human_linc_df["area_name"].str.replace("Davie  County", "Davie County")
+all_social_and_human_linc_df["area_name"] = all_social_and_human_linc_df["area_name"].str.replace("Samson County", "Sampson County")
+
+all_social_and_human_linc_df = all_social_and_human_linc_df.pivot_table(index=["area_name","year"], columns=["variable"], values="value")
+#put back into a dataframe
+all_social_and_human_linc_df = pd.DataFrame(all_social_and_human_linc_df.to_records())
+#replace all NaN with 0
+all_social_and_human_linc_df = all_social_and_human_linc_df.fillna(0)
+print(all_social_and_human_linc_df.columns)
+#put into a csv
+all_social_and_human_linc_df.to_csv("Clean_Resources/all_social_and_human_osbm_2020.csv", index=False)
+
+
+# In[39]:
 
 
 #Join all of the data frames by county and year
@@ -408,10 +455,21 @@ all_health_employment_demog_ed_income_poverty_unemployed_df = pd.merge(all_healt
 all_health_employment_demog_ed_income_poverty_unemployed_pop_df = pd.merge(all_health_employment_demog_ed_income_poverty_unemployed_df, all_population_counts_df, on=["area_name", "year"], how="outer")
 #merge all_health_employment_demog_ed_income_poverty_unemployed_pop_df and counties_geoapify_df
 all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_df = pd.merge(all_health_employment_demog_ed_income_poverty_unemployed_pop_df, counties_geoapify_df, on=["area_name", "FIPS"], how="outer")
+#merge all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_df and all_education_osbm_df
+all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_ed_df = pd.merge(all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_df, all_education_osbm_df, on=["area_name", "year"], how="outer")
+#merge all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_ed_df and all_social_and_human_linc_df
+all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_ed_social_df = pd.merge(all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_ed_df, all_social_and_human_linc_df, on=["area_name", "year"], how="outer")
 #rename Master Dataframe
-Master_NC_Dataframe = all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_df.rename(columns={"area_name": "County"})
+Master_NC_Dataframe = all_health_employment_demog_ed_income_poverty_unemployed_pop_geo_ed_social_df.rename(columns={"area_name": "County"})
 #create death per 1000 infant death column
 Master_NC_Dataframe['death_per_1000_infant_death'] = Master_NC_Dataframe['Infant Deaths'] / Master_NC_Dataframe['Population (Census/Estimate/Projection)'] * 1000
+print(len(Master_NC_Dataframe))
 #put into a csv
 Master_NC_Dataframe.to_csv("Clean_Resources/Master_NC_Dataframe_2020.csv", index=False)
+
+
+# In[40]:
+
+
+get_ipython().system('jupyter nbconvert --to script data_collection.ipynb --output ./py_scripts/Master_df')
 
