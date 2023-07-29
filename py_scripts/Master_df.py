@@ -5,7 +5,7 @@
 # 
 # The goal of this file is to create a Dataframe which contains metrics for each county in North Carolina.
 
-# In[55]:
+# In[1]:
 
 
 # Dependencies
@@ -16,7 +16,7 @@ import json
 from pathlib import Path
 
 
-# In[56]:
+# In[2]:
 
 
 #read in csvs and jsons into dataframes and print head
@@ -43,7 +43,7 @@ print(all_health_osbm_df.columns)
 all_health_osbm_df.to_csv("Clean_Resources/all_health_osbm_2020.csv", index=False)
 
 
-# In[57]:
+# In[3]:
 
 
 #employment-and-income-linc.json
@@ -68,7 +68,7 @@ print(all_employment_osbm_df.columns)
 all_employment_osbm_df.to_csv("Clean_Resources/all_employment_osbm_2020.csv", index=False)
 
 
-# In[58]:
+# In[4]:
 
 
 #population-by-age-race-sex-linc.json
@@ -226,7 +226,7 @@ all_population_demog_df.to_csv("Clean_Resources/all_population_demog_2020.csv", 
 
 
 
-# In[59]:
+# In[5]:
 
 
 #pop_migration_linc.json
@@ -252,7 +252,7 @@ print(all_population_counts_df.columns)
 all_population_counts_df.to_csv("Clean_Resources/all_population_counts_2020.csv", index=False)
 
 
-# In[60]:
+# In[6]:
 
 
 #NIH_high_school_ed.csv
@@ -279,7 +279,7 @@ print(all_high_school_ed_df["area_name"])
 all_high_school_ed_df.to_csv("Clean_Resources/all_high_school_ed_2020.csv", index=False)
 
 
-# In[61]:
+# In[7]:
 
 
 #NIH_median_income.csv
@@ -305,7 +305,7 @@ print(all_median_income_df["area_name"])
 all_median_income_df.to_csv("Clean_Resources/all_median_income_2020.csv", index=False)
 
 
-# In[62]:
+# In[8]:
 
 
 #NIH_persons_below_poverty.csv
@@ -330,7 +330,7 @@ print(all_persons_below_poverty_df["area_name"])
 all_persons_below_poverty_df.to_csv("Clean_Resources/all_persons_below_poverty_2020.csv", index=False)
 
 
-# In[63]:
+# In[9]:
 
 
 #NIH_persons_unemployed.csv
@@ -355,7 +355,7 @@ print(all_persons_unemployed_df["area_name"])
 all_persons_unemployed_df.to_csv("Clean_Resources/all_persons_unemployed_2020.csv", index=False)
 
 
-# In[66]:
+# In[10]:
 
 
 #geoapify_counties json file
@@ -388,7 +388,7 @@ counties_geoapify_df.to_csv('Clean_Resources/geoapify_counties.csv', index=False
 
 
 
-# In[67]:
+# In[11]:
 
 
 #Join all of the data frames by county and year
@@ -414,4 +414,10 @@ Master_NC_Dataframe = all_health_employment_demog_ed_income_poverty_unemployed_p
 Master_NC_Dataframe['death_per_1000_infant_death'] = Master_NC_Dataframe['Infant Deaths'] / Master_NC_Dataframe['Population (Census/Estimate/Projection)'] * 1000
 #put into a csv
 Master_NC_Dataframe.to_csv("Clean_Resources/Master_NC_Dataframe_2020.csv", index=False)
+
+
+# In[12]:
+
+
+get_ipython().system('jupyter nbconvert --to script data_collection.ipynb --output ./py_scripts/Master_df')
 
