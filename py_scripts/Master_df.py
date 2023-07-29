@@ -16,7 +16,7 @@ import json
 from pathlib import Path
 
 
-# In[28]:
+# In[41]:
 
 
 #read in csvs and jsons into dataframes and print head
@@ -466,10 +466,4 @@ Master_NC_Dataframe['death_per_1000_infant_death'] = Master_NC_Dataframe['Infant
 print(len(Master_NC_Dataframe))
 #put into a csv
 Master_NC_Dataframe.to_csv("Clean_Resources/Master_NC_Dataframe_2020.csv", index=False)
-
-
-# In[40]:
-
-
-get_ipython().system('jupyter nbconvert --to script data_collection.ipynb --output ./py_scripts/Master_df')
 

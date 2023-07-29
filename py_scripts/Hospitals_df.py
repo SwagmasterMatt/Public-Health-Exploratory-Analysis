@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[41]:
 
 
 import requests
@@ -98,7 +98,7 @@ print(hospitals_geoapify_df.head())
 hospitals_geoapify_df.to_csv("Clean_Resources/hospitals_geoapify.csv", index=False)
 
 
-# In[20]:
+# In[42]:
 
 
 from config import NC_osbm_key
@@ -121,7 +121,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[26]:
+# In[43]:
 
 
 #put into .json file with proper formatting
@@ -135,7 +135,7 @@ print(vital_stats.head())
 print(len(vital_stats))
 
 
-# In[28]:
+# In[44]:
 
 
 from config import NC_osbm_key
@@ -158,7 +158,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[29]:
+# In[45]:
 
 
 #put into .json file with proper formatting
@@ -172,7 +172,7 @@ print(ed_stats.head())
 print(len(ed_stats))
 
 
-# In[30]:
+# In[46]:
 
 
 from config import NC_osbm_key
@@ -195,7 +195,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[31]:
+# In[47]:
 
 
 #put into .json file with proper formatting
@@ -209,7 +209,7 @@ print(employment_stats.head())
 print(len(employment_stats))
 
 
-# In[32]:
+# In[48]:
 
 
 from config import NC_osbm_key
@@ -233,7 +233,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[33]:
+# In[49]:
 
 
 #put into .json file with proper formatting
@@ -247,7 +247,7 @@ print(pop_migration.head())
 print(len(pop_migration))
 
 
-# In[37]:
+# In[50]:
 
 
 from config import NC_osbm_key
@@ -270,7 +270,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[38]:
+# In[51]:
 
 
 #put into .json file with proper formatting
@@ -284,7 +284,7 @@ print(pop_ars.head())
 print(len(pop_ars))
 
 
-# In[39]:
+# In[52]:
 
 
 from config import NC_osbm_key
@@ -306,7 +306,7 @@ response
 print(json.dumps(response, indent=4, sort_keys=True))
 
 
-# In[40]:
+# In[53]:
 
 
 #put into .json file with proper formatting
@@ -318,10 +318,4 @@ with open('Resources/social-and-human-services-linc.json', 'w') as json_file:
 social_stats = pd.read_json("Resources/social-and-human-services-linc.json")
 print(social_stats.head())
 print(len(social_stats))
-
-
-# In[34]:
-
-
-get_ipython().system('jupyter nbconvert --to script api_call.ipynb --output ./py_scripts/Hospitals_df')
 
