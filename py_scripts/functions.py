@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[103]:
+# In[1]:
 
 
 import pandas as pd
@@ -20,7 +20,7 @@ def Master_DF():
 Master_NC_Dataframe = pd.DataFrame(Master_DF())
 
 
-# In[104]:
+# In[2]:
 
 
 columns = pd.DataFrame(Master_NC_Dataframe.columns)
@@ -29,7 +29,7 @@ column_list = columns[0].tolist()
 len(column_list)
 
 
-# In[105]:
+# In[3]:
 
 
 """
@@ -201,7 +201,7 @@ death_per_1000_infant_death
 """
 
 
-# In[106]:
+# In[4]:
 
 
 #per 1000
@@ -477,7 +477,7 @@ data_categories = {
             'National Rank (Unemployment)'
         ],
         'Poverty and Welfare': [
-            'Percent of White Persons in Poverty',
+            'Percent  of White Persons in Poverty',
             'Percent of Am. Indian Alaska Native Persons in Poverty',
             'Percent of Black Persons in Poverty',
             'Percent of Hispanic Persons in Poverty',
@@ -489,8 +489,6 @@ data_categories = {
             'National Rank (Poverty)'
         ],
         'Education': [
-            'Average SAT Math Score',
-            'Average SAT Reading Score',
             'SAT Redesign Average ERW Score',
             'SAT Redesign Average Math Score',
             'SAT Redesign Total Average Score',
