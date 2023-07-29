@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[93]:
+# In[103]:
 
 
 import pandas as pd
@@ -20,7 +20,7 @@ def Master_DF():
 Master_NC_Dataframe = pd.DataFrame(Master_DF())
 
 
-# In[94]:
+# In[104]:
 
 
 columns = pd.DataFrame(Master_NC_Dataframe.columns)
@@ -29,7 +29,7 @@ column_list = columns[0].tolist()
 len(column_list)
 
 
-# In[95]:
+# In[105]:
 
 
 """
@@ -201,7 +201,7 @@ death_per_1000_infant_death
 """
 
 
-# In[96]:
+# In[106]:
 
 
 #per 1000
@@ -440,7 +440,6 @@ data_categories = {
             'Licensed Capacity of Child Day Care Facilities',
             'Licensed Child Day Care Facilities',
             'Unduplicated Count of Medicaid Eligibles',
-            'Medicare Enrollees Age 65',
             'Medicare Enrollees Age 65+ with Hosp/Med Coverage',
             'Medicare Enrollees Age 65+ with Medical Coverage',
             'Social Security Beneficiaries',
@@ -552,6 +551,7 @@ def category_columns():
     not_per_1000_df = pd.DataFrame(data_categories['not_per_1000'].keys())
     Category_df = pd.concat([per_1000_df, not_per_1000_df], axis=1)
     Category_df.columns = ['per_1000', 'not_per_1000']
+    Category_df
     return Category_df
 
 Category_df = category_columns()
