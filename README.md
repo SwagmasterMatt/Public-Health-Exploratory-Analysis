@@ -8,7 +8,7 @@ This project was created for the UNC Data Analytics Bootcamp.
 
 ## Introduction
 
-The goal of this project was to explore socio-economic factors which may correlate with and cause variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Instutute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
+The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Instutute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
 
 ## Deliverables
 - api_call.ipnyb
@@ -37,7 +37,7 @@ One aspect of data cleaning was to determine what to do with the null data. For 
 
 ## Question 1: What factors correlate with infant mortality rates in North Carolina at the county level?
 
-We found an article about a study by the US National Center for Health Statistics on Infant Mortality in the US (Ely & Driscoll, 2022). Among the examined trends, North Carolina was among the sixteen states with significantly higher than average infant mortality rates.
+We found an article about a study by the US National Center for Health Statistics on Infant Mortality in the US (Ely & Driscoll, 2022). Among the trends examined, North Carolina was among the sixteen states with significantly higher than average infant mortality rates.
 
 In order to explore the relationships which may correlate with infant mortality, the data first needed to be normalized by county population.  Many of the values collected from APIs and online databases were single population counts, and thus needed to be converted to per thousand county residents.  After these values were converted, a correlation heatmap was generated in order to identify strong correlations that existed in the data.
 
@@ -47,10 +47,18 @@ Figure 2: ![heatmap1](https://github.com/SwagmasterMatt/Public-Health-Explorator
 
 The first two correlation heat maps (Figure 1 and Figure 2) examine the correlation between number of non-white women per 1000 residents and various statistics related to public health, including infant deaths and low weight births (<2500 grams.)  A similar plot was generated for white women per 1000 residents.  The first apparent trend is that the larger the population of young non-white women in a county, the higher the infant mortality rate (r-values ranging from 0.53 to 0.63).  Additionally, younger ages of non-white women show higher correlation values.  In contrast, the correlation between the proportion of white women per county and infant mortality was negative (ranging from -0.64 to -0.26), suggesting that the whiter the population of a county, the lower the infant mortality rates.
 
-Given that race has virtually no causal relationship with medical outcomes outside of socio-economic influences, further heatmaps (see Appendix) were generated to investigate correlations between poverty statistics and infant death, as well as relationships between counts of health care facilities and personnel by county.
+Given that race has virtually no causal relationship with medical outcomes outside of socio-economic influences, further heatmaps (Figure 3 and Figure 4) were generated to investigate correlations between poverty statistics and infant death, as well as relationships between counts of health care facilities and personnel by county.
 
 
 ## Question 2: How do changing socio-economic factors contribute to the differing rates of infant mortality between counties?
+
+Figure 3: ![heatmap3](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/131621692/ba8b2abc-109a-47c1-aabf-49a42de47d42)
+
+Figure 4: ![heatmap4](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/131621692/e655cfcc-cf0f-4ca9-9931-aabc9235afaa)
+
+The correlation heatmap comparing poverty statistics and infant mortality (see Figure 3 in the Appendix) show several possible explanations for why infant mortality may be higher in counties with higher non-white populations.  We can note that higher proportions of “People (Below Poverty)” and “Families in Poverty” correlate with higher infant mortality rates (r-values of 0.54 and 0.60 respectively).  We also see that “Black Population” is correlated with “People (Below Poverty)” and “Families in Poverty” (r-values of 0.57 and 0.59 respectively).  This suggests that poverty rates serve as better explanatory variables for infant mortality than race alone.
+
+We also wondered whether counties in North Carolina with higher proportions of non-white women had differences in numbers of healthcare facilities and personnel.  The heatmap in Figure 4 (located in the Appendix) suggests that variables such as “Beds in General Hospitals”, “Active Primary Care Physicians”, and “Registered Nurses” were not strongly correlated with populations of non-white women.  We thus conclude that these variables do not sufficiently explain differences in infant mortality between white and non-white women.
 
 ## Question 3: What sub-factors of poverty are present consistently throughout socio-economic factors?
 
