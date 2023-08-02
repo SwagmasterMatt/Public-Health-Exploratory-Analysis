@@ -63,7 +63,7 @@ There was an abnormally high correlation with black persons in poverty with Blac
 
 ![Correlation 7](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/5e26673b-27fb-4765-83d3-9d780dd8bb4d)
 
-Additionally, there was an interesting correlation between determined white povery vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispursion of race when races are in poverty.
+Additionally, there was an interesting correlation between determined white povery vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispursion at the county level of race when races are in poverty.
 
 ![Correlation 8](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/43b9e6ef-548d-4035-a513-496e5182fa1f)
 
