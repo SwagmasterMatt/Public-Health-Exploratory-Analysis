@@ -1,34 +1,22 @@
 # Public Health Exploratory Analysis
 This project was created for the UNC Data Analytics Bootcamp.
+
 ## Authors
-- Matthew Ray (@SwagmasterMatt)
-- Sam Lind (@SamLind11)
-- Lori Girton (@ )
-- Jeremy Magee (@ )
+- Matthew Ray ([@SwagmasterMatt](https://github.com/SwagmasterMatt))
+- Sam Lind ([@SamLind11](https://github.com/SamLind11))
+- Lori Girton ([@LoriGirton](https://github.com/lorigirton))
+- Jeremy Magee ([@JpMageeGitHub](https://github.com/JpMageeGitHub))
 
 ## Introduction
 
 The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Instutute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
 
-## Deliverables
-- api_call.ipnyb
-Description
-- chi_tests.ipynb
-Description
-- data_collection.ipynb
-Description
-- data_exploration.ipynb
-Description
-- data_visualization.ipynb
-Description
-- functions.ipynb
-Description
-
 ## Key Questions
+We set out to collect data and perform analysis which would answer the following equations:
+
 1.  What factors correlate with infant mortality rates in North Carolina at the county level?
 2.	How do changing socio-economic factors contribute to the differing rates of infant mortality between counties?
 3.	What sub-factors of poverty are present consistently throughout socio-economic factors?
-4.	What spurious correlations did we find in this analysis?
 
 ## Data Collection and Data Cleaning
 The data for this analysis was collected from a combination of publicly available APIs and online databases.  The NC Office of State Budget and Management API provided data related to education rates, health facilities, and poverty for each county in North Carolina.  Additionally, we queried the National Institute of Health for further statistics on public health, education, population demographics, and per capita income by county.  Our Jupyter Notebook file (data_collection.ipynb) contains all API calls and reads in the NIH data from JSON files located in the Resources file.  These data were assembled into a master DataFrame for initial analysis.
@@ -56,10 +44,26 @@ Figure 3: ![heatmap3](https://github.com/SwagmasterMatt/Public-Health-Explorator
 
 Figure 4: ![heatmap4](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/131621692/e655cfcc-cf0f-4ca9-9931-aabc9235afaa)
 
-The correlation heatmap comparing poverty statistics and infant mortality (see Figure 3 in the Appendix) show several possible explanations for why infant mortality may be higher in counties with higher non-white populations.  We can note that higher proportions of “People (Below Poverty)” and “Families in Poverty” correlate with higher infant mortality rates (r-values of 0.54 and 0.60 respectively).  We also see that “Black Population” is correlated with “People (Below Poverty)” and “Families in Poverty” (r-values of 0.57 and 0.59 respectively).  This suggests that poverty rates serve as better explanatory variables for infant mortality than race alone.
+The correlation heatmap comparing poverty statistics and infant mortality (see Figure 3) show several possible explanations for why infant mortality may be higher in counties with higher non-white populations.  We can note that higher proportions of “People (Below Poverty)” and “Families in Poverty” correlate with higher infant mortality rates (r-values of 0.54 and 0.60 respectively).  We also see that “Black Population” is correlated with “People (Below Poverty)” and “Families in Poverty” (r-values of 0.57 and 0.59 respectively).  This suggests that poverty rates serve as better explanatory variables for infant mortality than race alone.
 
-We also wondered whether counties in North Carolina with higher proportions of non-white women had differences in numbers of healthcare facilities and personnel.  The heatmap in Figure 4 (located in the Appendix) suggests that variables such as “Beds in General Hospitals”, “Active Primary Care Physicians”, and “Registered Nurses” were not strongly correlated with populations of non-white women.  We thus conclude that these variables do not sufficiently explain differences in infant mortality between white and non-white women.
+We also wondered whether counties in North Carolina with higher proportions of non-white women had differences in numbers of healthcare facilities and personnel.  The heatmap in Figure 4 suggests that variables such as “Beds in General Hospitals”, “Active Primary Care Physicians”, and “Registered Nurses” were not strongly correlated with populations of non-white women.  We thus conclude that these variables do not sufficiently explain differences in infant mortality between white and non-white women.
 
 ## Question 3: What sub-factors of poverty are present consistently throughout socio-economic factors?
 
-## Question 4: What spurious correlations did we find in this analysis?
+Families with a female head of house (e.g. Single-Parent) was the most consistent sub-factor through our measured socioeconomic data. Within that grouping, those families with a Black female head of house were more likely than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative, as an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
+
+## Summary and Conclusions
+
+## Limitations
+
+The analysis in this document is primarily limited by the nature of the data collected.  The data collected from the North Carolina OSBM and the NIH were primarily counts provided for each county.  However, these counts, including those for infant mortality, were not broken down along lines of race or any socio-economic status.  We are therefore limited to analyzing relationships between these counts, and conclusions drawn would have major caveats, without the acquisition of more granular data. Such data is necessary to more carefully examine how socio-economic factors might influence infant mortality.
+
+## Resources and References
+
+Ely, Danielle M. & Driscoll, Anne K. (2022). Infant Mortality in the United States, 2020: Data From the Period Linked Birth/Infant Death File. National Vital Statistics Reports,  Volume 71, Number 5. Retrieved from https://www.cdc.gov/nchs/data/nvsr/nvsr71/nvsr71-05.pdf.
+
+HDPulse: An Ecosystem of Minority Health and Health Disparities Resources. National Institute on Minority Health and Health Disparities. Created 7/25/2023. Available from https://hdpulse.nimhd.nih.gov
+
+NC OSBM. (2023). API Console. Retrieved 7/27/2023, from https://linc.osbm.nc.gov/api/v2/console1.
+
+
