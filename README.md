@@ -59,6 +59,14 @@ Families with a female head of house (e.g. Single-Parent) was the most consisten
 ![Correlation 3](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/666f4c82-a5d9-46e0-996f-062e58267a1a)
 ![Correlation 6](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/ee424cb8-d729-46d3-820e-15b3a120a713)
 
+There was an abnormally high correlation with black persons in poverty with Black Age 25 and Up w/ Elementary School Education or Less
+
+![Correlation 7](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/5e26673b-27fb-4765-83d3-9d780dd8bb4d)
+
+Additionally, there was an interesting correlation between determined white povery vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispursion of race when races are in poverty.
+
+![Correlation 8](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/43b9e6ef-548d-4035-a513-496e5182fa1f)
+
 ## Summary and Conclusions
 
 ## Limitations
