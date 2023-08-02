@@ -51,14 +51,13 @@ We also wondered whether counties in North Carolina with higher proportions of n
 ## Question 3: What sub-factors of poverty are present consistently throughout socio-economic factors?
 
 Families with a female head of house (e.g. Single-Parent) was the most consistent sub-factor through our measured socioeconomic data. Within that grouping, those families with a Black female head of house were more likely than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative, as an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
+
 ![Correlation 1](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/84f90e6f-dbee-4da0-b6a7-f17d36e7221e)
 ![Correlation 2](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/d3094610-fda3-4cf6-a4f6-e9c2b0189929)
 ![Correlation 5](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/d4266c1a-6f9f-487a-9d3d-6c7b8874d62c)
 ![Correlation 4](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/141272b9-c6d9-4951-b6bc-7bd4c6845b53)
 ![Correlation 3](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/666f4c82-a5d9-46e0-996f-062e58267a1a)
 ![Correlation 6](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/ee424cb8-d729-46d3-820e-15b3a120a713)
-
-
 
 ## Summary and Conclusions
 
