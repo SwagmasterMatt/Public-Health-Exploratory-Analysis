@@ -9,7 +9,7 @@ This project was created for the UNC Data Analytics Bootcamp.
 
 ## Introduction
 
-The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Institute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
+The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Institute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  We selected the year 2020 for our analysis.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
 
 ## Key Questions
 We set out to collect data and perform analysis which would answer the following equations:
