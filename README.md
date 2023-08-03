@@ -9,7 +9,7 @@ This project was created for the UNC Data Analytics Bootcamp.
 
 ## Introduction
 
-The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Instutute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
+The goal of this project was to explore socio-economic factors which may correlate with and explain variations in infant mortality in North Carolina.  Using data collected from the NC Office of Budget Management API and the National Institute of Health, we examined factors related to race, poverty, education, the presence of healthcare facilities and personnel, and public health to look for trends in NC's 100 counties.  The data was aggregated into a DataFrame, which was used to develop an array of data visualizations and implement machine learning algorithms.  
 
 ## Key Questions
 We set out to collect data and perform analysis which would answer the following equations:
@@ -50,7 +50,7 @@ We also wondered whether counties in North Carolina with higher proportions of n
 
 ## Question 3: What sub-factors of poverty are present consistently throughout socio-economic factors?
 
-Families with a female head of house (e.g. Single-Parent) was the most consistent sub-factor through our measured socioeconomic data. Within that grouping, those families with a Black female head of house were more likely than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative, as an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
+"Families with a female head of house" (e.g. Single-Parent) was the most consistent sub-factor throughout our measured socioeconomic data. Within that grouping, those families with a Black female heads of house were more likely to experience an infant death than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as them being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative, as an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
 
 ![Correlation 1](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/84f90e6f-dbee-4da0-b6a7-f17d36e7221e)
 ![Correlation 2](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/d3094610-fda3-4cf6-a4f6-e9c2b0189929)
@@ -63,11 +63,15 @@ There was an abnormally high correlation with black persons in poverty with Blac
 
 ![Correlation 7](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/5e26673b-27fb-4765-83d3-9d780dd8bb4d)
 
-Additionally, there was an interesting correlation between determined white povery vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispursion at the county level of race when races are in poverty.
+Additionally, there was an interesting correlation between determined white poverty vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispersion at the county level of race when races are in poverty.
 
 ![Correlation 8](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/43b9e6ef-548d-4035-a513-496e5182fa1f)
 
 ## Summary and Conclusions
+
+North Carolina counties display variation in rates of infant mortality along lines of race.  However, we found that poverty rates serve as better indicators of infant mortality rates between counties.  In fact, as in many places in the United States, poverty afflicts black North Carolinians at much higher rates than it does white North Carolinians.  In our analysis, we found that other subfactors of poverty such as rates of high school graduation and numbers of households headed by women also pointed to higher rates of infant mortality.  
+
+In further studies, we may look for additional data which predicts rates of poverty, education, and public health outcomes.  We found that the rate of Mid-level Health Practitioners in a county served as a good predictor of important factors such as poverty and infant mortality.  However, given that many other rates of healthcare personnel did not strongly correlate with infant mortality, this correlation would require further analysis to investigate its relevance.
 
 ## Limitations
 
