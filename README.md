@@ -50,7 +50,7 @@ We also wondered whether counties in North Carolina with higher proportions of n
 
 ## Question 3: What sub-factors of poverty are present consistently throughout socio-economic factors?
 
-"Families with a female head of house" (e.g. Single-Parent) was the most consistent sub-factor throughout our measured socioeconomic data. Within that grouping, those families with a Black female heads of house were more likely to experience an infant death than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as them being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative, as an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
+"Families with a female head of house" (e.g. Single-Parent) was the most consistent sub-factor throughout our measured socioeconomic data. Within that grouping, those families with a Black female heads of house were more likely to experience an infant death than other racial groups.  Furthermore, the likelihood of a person in poverty being black (p = 0.341) was twice as likely as them being white (p = 0.17), despite the populations being in a ratio of White to Black women of 1.91:1. Other sub-factors that follow logically are the highest finished level of education, and level of income. The correlation of these factors was negative; an increase in the highest level of education tends to reduce the level of poverty. This is clearly the case with level of income.
 
 ![Correlation 1](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/84f90e6f-dbee-4da0-b6a7-f17d36e7221e)
 ![Correlation 2](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/d3094610-fda3-4cf6-a4f6-e9c2b0189929)
@@ -59,11 +59,11 @@ We also wondered whether counties in North Carolina with higher proportions of n
 ![Correlation 3](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/666f4c82-a5d9-46e0-996f-062e58267a1a)
 ![Correlation 6](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/ee424cb8-d729-46d3-820e-15b3a120a713)
 
-There was an abnormally high correlation with black persons in poverty with Black Age 25 and Up w/ Elementary School Education or Less
+There was an abnormally high correlation between black persons in poverty and "Black Age 25 and Up w/ Elementary School Education or Less".
 
 ![Correlation 7](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/5e26673b-27fb-4765-83d3-9d780dd8bb4d)
 
-Additionally, there was an interesting correlation between determined white poverty vs determined black poverty. The relationship suggested an inverse relationship - possibly suggesting geographic dispersion at the county level of race when races are in poverty.
+Additionally, there was an interesting correlation between "Determined White Poverty" vs "Determined Black Poverty". The relationship suggested an inverse relationship - possibly suggesting geographic dispersion at the county level of race when races are in poverty.
 
 ![Correlation 8](https://github.com/SwagmasterMatt/Public-Health-Exploratory-Analysis/assets/133460903/43b9e6ef-548d-4035-a513-496e5182fa1f)
 
