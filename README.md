@@ -1,6 +1,10 @@
 # Public Health Exploratory Analysis
 This project was created for the UNC Data Analytics Bootcamp.
 
+## Description
+Project analyzing child mortality rates across all 100 North Carolina counties.
+Various forms of statistical analysis and machine learning techniques are used to examine correlation between child mortality and different socio-economic factors.
+
 ## Authors
 - Matthew Ray ([@SwagmasterMatt](https://github.com/SwagmasterMatt))
 - Sam Lind ([@SamLind11](https://github.com/SamLind11))
